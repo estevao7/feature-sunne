@@ -18,9 +18,16 @@ Este arquivo divide a implementação em tarefas sequenciais para agentes de IA.
 
 **Escopo:** A taxa de desconto é 20% para Casa e Negócio, conforme a regra de cálculo e os critérios de aceite do PRD. Confirmar os valores concretos necessários para o link do CTA e para o `base` do GitHub Pages, se não puderem ser determinados pelo repositório.
 
+**Status:** Concluída.
+
+**Decisões registradas:**
+- Desconto confirmado em 20% para Casa e Negócio, conforme o PRD; as tarefas seguintes devem preservar essa regra.
+- O repositório remoto é `estevao7/feature-sunne`; o caminho base esperado para o GitHub Pages é `/feature-sunne/`.
+- Destino do CTA confirmado: `https://sunne.economia.sunne.com.br/?_gl=1*1lvyhli*_gcl_au*MzM0MDQ1MTU2LjE3OTQ2MjU3ODY.*_ga*NjU3MzM3MTIuMTc5NDYyNTc4Nw..*_ga_47BBPVJZY0*czE3OTQ2NzA5MzYkbzIkZzAkdDE3OTQ2NzA5MzYkajYwJGwwJGgw`.
+
 **Critério de aceitação:**
-- O destino do CTA e o caminho de publicação estão definidos, ou suas pendências estão explicitamente registradas para decisão.
-- Os agentes das tarefas seguintes usam o desconto de 20% para ambos os perfis, sem redefinir essa regra.
+- [x] O destino do CTA e o caminho de publicação estão definidos.
+- [x] O desconto de 20% para ambos os perfis está confirmado para as tarefas seguintes, sem redefinir essa regra.
 
 ### 2. Configurar Tailwind e identidade visual
 
@@ -28,10 +35,14 @@ Este arquivo divide a implementação em tarefas sequenciais para agentes de IA.
 
 **Escopo:** Integrar o Tailwind CSS pelo plugin Vite e configurar os tokens de cores e a fonte conforme o PRD.
 
+**Status:** Concluída.
+
+**Resumo:** Tailwind integrado pelo plugin existente do Vite; tokens de cor Sunne e fonte Poppins disponíveis globalmente e emitidos no CSS de produção.
+
 **Critério de aceitação:**
-- O Tailwind é processado pelo Vite sem erros e está importado na folha de estilos da aplicação.
-- Os tokens visuais e a fonte especificados no PRD estão disponíveis para uso.
-- `npm run build` passa.
+- [x] O Tailwind é processado pelo Vite sem erros e está importado na folha de estilos da aplicação.
+- [x] Os tokens visuais e a fonte especificados no PRD estão disponíveis para uso.
+- [x] `npm run build` passa.
 
 ### 3. Criar tipos e utilitários de cálculo e formatação
 
