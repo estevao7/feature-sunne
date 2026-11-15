@@ -66,11 +66,15 @@ Este arquivo divide a implementação em tarefas sequenciais para agentes de IA.
 
 **Escopo:** Implementar os componentes de card de resultado, aviso de estimativa e botão CTA.
 
+**Status:** Concluída.
+
+**Resumo:** Criados `ResultCard`, `AverageDisclaimer` e `CtaButton`, com props tipadas, estilos da identidade Sunne, valores formatados em BRL e CTA apontando para o destino confirmado na tarefa 1.
+
 **Critério de aceitação:**
-- Cada componente recebe props descritas por um `type` próprio.
-- Os componentes exibem os textos e a apresentação definidos no PRD.
-- O CTA usa o destino definido ou registrado na tarefa 1.
-- A verificação de TypeScript passa.
+- [x] Cada componente recebe props descritas por um `type` próprio.
+- [x] Os componentes exibem os textos e a apresentação definidos no PRD.
+- [x] O CTA usa o destino definido ou registrado na tarefa 1.
+- [x] A verificação de TypeScript passa.
 
 ### 5. Criar entrada da conta e seleção de perfil
 
@@ -78,11 +82,15 @@ Este arquivo divide a implementação em tarefas sequenciais para agentes de IA.
 
 **Escopo:** Implementar o campo de valor mensal e a alternância entre os perfis previstos.
 
+**Status:** Concluída.
+
+**Resumo:** Criados `BillInput`, com rótulo associado, entrada numérica, limites e mensagens acessíveis de validação, e `ProfileToggle`, com opções Casa e Negócio operáveis por teclado e selecionadas por rádios nativos. A calculadora não foi montada; isso pertence à task 6.
+
 **Critério de aceitação:**
-- O campo tem `label` associado, aceita entrada numérica e respeita os limites e estados de validação do PRD.
-- É possível selecionar os dois perfis; a seleção pode ser operada por teclado e tem estado acessível.
-- As props são definidas com `type`, sem `any`.
-- A verificação de TypeScript passa.
+- [x] O campo tem `label` associado, aceita entrada numérica e respeita os limites e estados de validação do PRD.
+- [x] É possível selecionar os dois perfis; a seleção pode ser operada por teclado e tem estado acessível.
+- [x] As props são definidas com `type`, sem `any`.
+- [x] A verificação de TypeScript passa.
 
 ### 6. Montar a calculadora e conectar os resultados
 
