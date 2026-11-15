@@ -50,11 +50,15 @@ Este arquivo divide a implementação em tarefas sequenciais para agentes de IA.
 
 **Escopo:** Criar os tipos do domínio e implementar a função pura de cálculo e o formatador de moeda.
 
+**Status:** Concluída.
+
+**Resumo:** Criados os tipos `Profile` e `SavingsResult`, cálculo com desconto de 20% para Casa e Negócio, validação do valor entre R$ 0,01 e R$ 100.000, e formatação BRL em `pt-BR`. A função retorna `null` para valores ou perfis inválidos. Incluídos testes automatizados com `node:test` e o script `npm test`.
+
 **Critério de aceitação:**
-- Os tipos usam `type`, sem `interface` ou `any`.
-- A função de cálculo aplica a taxa de 20% para Casa e Negócio e retorna os valores previstos pelo PRD.
-- A formatação apresenta valores como moeda BRL em `pt-BR`.
-- Há validação automatizada para os casos válidos e inválidos relevantes, e ela passa.
+- [x] Os tipos usam `type`, sem `interface` ou `any`.
+- [x] A função de cálculo aplica a taxa de 20% para Casa e Negócio e retorna os valores previstos pelo PRD.
+- [x] A formatação apresenta valores como moeda BRL em `pt-BR`.
+- [x] Há validação automatizada para os casos válidos e inválidos relevantes, e ela passa.
 
 ### 4. Criar componentes de apresentação reutilizáveis
 
