@@ -2,15 +2,12 @@ import { useState } from 'react'
 import { AverageDisclaimer } from './AverageDisclaimer.tsx'
 import { BillInput } from './BillInput.tsx'
 import { CtaButton } from './CtaButton.tsx'
-import { ProfileToggle } from './ProfileToggle.tsx'
 import { ResultCard } from './ResultCard.tsx'
 import { calculateSavings } from '../lib/savings.ts'
-import type { Profile } from '../types/index.ts'
 
 export function SavingsCalculator() {
   const [monthlyBill, setMonthlyBill] = useState('')
-  const [profile, setProfile] = useState<Profile>('home')
-  const result = calculateSavings(Number(monthlyBill), profile)
+  const result = calculateSavings(Number(monthlyBill))
 
   return (
     <main className="min-h-screen bg-sunne-mist px-4 py-10 text-sunne-plum">
@@ -19,10 +16,9 @@ export function SavingsCalculator() {
           Quanto você pode economizar com a Sunne?
         </h1>
 
-         <div className="mt-6 grid gap-6 lg:grid-cols-2 lg:items-start">
+        <div className="mt-6 grid gap-6 lg:grid-cols-2 lg:items-start">
           <div className="grid gap-6">
             <BillInput value={monthlyBill} onChange={setMonthlyBill} />
-            <ProfileToggle value={profile} onChange={setProfile} />
           </div>
 
           <div className="grid gap-6">
