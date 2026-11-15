@@ -98,12 +98,16 @@ Este arquivo divide a implementação em tarefas sequenciais para agentes de IA.
 
 **Escopo:** Compor os componentes na calculadora, manter o estado necessário com `useState` e conectar a entrada à função de cálculo.
 
+**Status:** Concluída.
+
+**Resumo:** Montado o componente `SavingsCalculator` com estado para o valor da conta e o perfil, resultados mensais e anuais atualizados durante a edição, aviso junto aos resultados, região `aria-live="polite"` e CTA configurado. Valores inválidos ou vazios mantêm os resultados ocultos.
+
 **Critério de aceitação:**
-- Entradas válidas atualizam os resultados mensal e anual imediatamente, inclusive ao trocar o perfil.
-- Entrada vazia, zero, negativa ou acima do limite não apresenta cálculo.
-- O aviso de estimativa permanece visível junto ao resultado, e a região de resultado anuncia atualizações com `aria-live="polite"`.
-- O CTA é exibido e usa o destino configurado.
-- `npm run build` passa.
+- [x] Entradas válidas atualizam os resultados mensal e anual imediatamente, inclusive ao trocar o perfil.
+- [x] Entrada vazia, zero, negativa ou acima do limite não apresenta cálculo.
+- [x] O aviso de estimativa permanece visível junto ao resultado, e a região de resultado anuncia atualizações com `aria-live="polite"`.
+- [x] O CTA é exibido e usa o destino configurado.
+- [x] `npm run build` passa.
 
 ### 7. Ajustar responsividade e acessibilidade
 
