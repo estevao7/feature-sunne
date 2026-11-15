@@ -1,32 +1,77 @@
-# React + TypeScript + Vite
+# Calculadora de Economia · Sugestão de funcionalidade para a Sunne
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+> **Protótipo independente, feito por iniciativa própria.**
+ Não é um projeto oficial e não tem vínculo com a Sunne. Os valores são estimativas baseadas em um desconto médio de 20% [fonte do 20%: ...] e não uma promessa de economia.
 
-Currently, two official plugins are available:
+## Por que fiz isso (STAR)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+**Situação**
+A página inicial da Sunne convida o visitante a economizar na conta de
+energia, com o botão "Quero economizar". Quem chega ali tem uma dúvida
+natural antes de se cadastrar: *"quanto eu economizaria, de verdade?"*
 
-## React Compiler
+**Tarefa**
+Me interessei pelo setor de energia e pela vaga de desenvolvimento, então
+decidi transformar essa dúvida em algo concreto: um protótipo que mostra
+ao visitante a sua economia estimada em segundos, antes de ele decidir.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Ação**
+- Criei uma calculadora em que a pessoa digita o valor da conta de luz.
+- Ela mostra a economia **mensal** e **anual** estimadas.
+- Tratei os casos inválidos (campo vazio, zero, negativo ou valor absurdo)
+  com uma mensagem amigável em vez de um resultado errado.
+- Incluí um aviso de que o valor é uma média, para ser transparente.
+- Cuidei da acessibilidade (a região do resultado avisa leitores de tela
+  quando o valor muda).
+- Simplifiquei o código: a primeira versão tinha dois perfis (casa e
+  negócio), mas ambos tinham o mesmo desconto. Removi a opção redundante
+  para a tela ficar mais direta.
+- Usei IA como ferramenta de apoio e revisei o código para entender
+  cada parte.
 
-## Expanding the Oxlint configuration
+**Resultado**
+- Um protótipo funcional que mostra o benefício em números, no momento
+  em que o visitante está interessado.
+- Aprendi a modelar regras de negócio em TypeScript, validar entradas e
+  pensar na experiência de quem usa.
+- Se fosse testar de verdade, eu mediria se quem usa a calculadora clica
+  mais no "Quero economizar". Essa é uma **hipótese**, ainda não medi.
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## O que eu não sei (e gostaria de aprender)
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+Não conheço as regras reais de desconto da Sunne, que podem variar por
+distribuidora, região e consumo. Por isso o cálculo usa uma média simples.
+Eu adoraria ouvir o time sobre como evoluir isso com dados reais.
+
+## Como funciona
+
+```javascript
+economiaMensal = conta * 0.2
+economiaAnual  = economiaMensal * 12
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Resultados inválidos devolvem `null`, e a tela pede o valor da conta.
+
+## Tecnologias
+
+React · TypeScript · Tailwind CSS · [...]
+
+## Como rodar
+
+```bash
+git clone https://github.com/estevao7/[nome-do-repositorio].git
+cd [nome-do-repositorio]
+npm install
+npm run dev
+```
+
+## Próximos passos (ideias)
+
+- Usar tarifas reais por distribuidora
+- Testes automatizados da função `calculateSavings`
+- Medir o impacto no clique do botão "Quero economizar"
+
+## Autor
+
+Estêvão · [GitHub](https://github.com/estevao7) ·
+[LinkedIn](https://linkedin.com/in/estevãoperez-508ba1229)
