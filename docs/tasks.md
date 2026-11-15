@@ -115,10 +115,14 @@ Este arquivo divide a implementação em tarefas sequenciais para agentes de IA.
 
 **Escopo:** Finalizar o layout mobile-first, comportamento em telas maiores e requisitos de acessibilidade.
 
+**Status:** Concluída.
+
+**Resumo:** Implementado layout mobile-first com cards lado a lado a partir de `md` e formulário/resultados em colunas em `lg`. Ajustados contraste do CTA e indicadores de foco; rótulos, alvos de toque e anúncio acessível dos resultados foram preservados.
+
 **Critério de aceitação:**
-- A tela funciona em 360px sem rolagem horizontal.
-- Cards, formulário e resultados seguem a disposição indicada para os breakpoints do PRD.
-- Alvos de toque, contraste, associação de rótulos e anúncio acessível dos resultados atendem aos requisitos do PRD.
+- [x] A tela funciona em 360px sem rolagem horizontal.
+- [x] Cards, formulário e resultados seguem a disposição indicada para os breakpoints do PRD.
+- [x] Alvos de toque, contraste, associação de rótulos e anúncio acessível dos resultados atendem aos requisitos do PRD.
 
 ### 8. Configurar publicação no GitHub Pages
 

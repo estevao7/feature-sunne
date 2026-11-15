@@ -8,7 +8,7 @@ type CtaButtonProps = {
 export function CtaButton({ className = '' }: CtaButtonProps) {
   return (
     <a
-      className={`inline-flex min-h-11 w-full items-center justify-center rounded-full bg-sunne-orange px-8 py-3 text-center font-semibold text-white transition-colors hover:bg-sunne-orange-soft focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sunne-plum ${className}`.trim()}
+      className={`inline-flex min-h-11 w-full items-center justify-center rounded-full bg-sunne-orange px-8 py-3 text-center font-semibold text-sunne-plum transition-colors hover:bg-sunne-orange-soft focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sunne-plum ${className}`.trim()}
       href={SUNNE_CTA_URL}
     >
       Quero economizar

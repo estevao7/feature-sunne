@@ -29,7 +29,7 @@ export function BillInput({ value, onChange }: BillInputProps) {
         Quanto você paga de energia por mês?
       </label>
       <div
-        className={`flex min-h-11 items-center rounded-xl border bg-white px-4 focus-within:ring-2 focus-within:ring-sunne-orange ${
+        className={`flex min-h-11 items-center rounded-xl border bg-white px-4 focus-within:ring-2 focus-within:ring-sunne-plum ${
           isInvalid ? 'border-red-600' : 'border-sunne-border'
         }`}
       >

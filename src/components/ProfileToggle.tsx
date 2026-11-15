@@ -30,7 +30,7 @@ export function ProfileToggle({ value, onChange }: ProfileToggleProps) {
             checked={value === 'home'}
             onChange={() => onChange('home')}
           />
-          <span className="flex min-h-11 w-full items-center justify-center rounded-xl border border-sunne-border px-4 text-sm font-medium text-sunne-plum transition-colors peer-checked:border-sunne-orange peer-checked:bg-sunne-orange/10 peer-focus-visible:ring-2 peer-focus-visible:ring-sunne-orange peer-focus-visible:ring-offset-2">
+          <span className="flex min-h-11 w-full items-center justify-center rounded-xl border border-sunne-border px-4 text-sm font-medium text-sunne-plum transition-colors peer-checked:border-sunne-plum peer-checked:bg-sunne-orange/10 peer-focus-visible:ring-2 peer-focus-visible:ring-sunne-plum peer-focus-visible:ring-offset-2">
             Casa
           </span>
         </label>
@@ -47,7 +47,7 @@ export function ProfileToggle({ value, onChange }: ProfileToggleProps) {
             checked={value === 'business'}
             onChange={() => onChange('business')}
           />
-          <span className="flex min-h-11 w-full items-center justify-center rounded-xl border border-sunne-border px-4 text-sm font-medium text-sunne-plum transition-colors peer-checked:border-sunne-orange peer-checked:bg-sunne-orange/10 peer-focus-visible:ring-2 peer-focus-visible:ring-sunne-orange peer-focus-visible:ring-offset-2">
+          <span className="flex min-h-11 w-full items-center justify-center rounded-xl border border-sunne-border px-4 text-sm font-medium text-sunne-plum transition-colors peer-checked:border-sunne-plum peer-checked:bg-sunne-orange/10 peer-focus-visible:ring-2 peer-focus-visible:ring-sunne-plum peer-focus-visible:ring-offset-2">
             Negócio
           </span>
         </label>
