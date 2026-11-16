@@ -39,25 +39,19 @@ Definir como tokens no Tailwind (`@theme` em `src/index.css`):
 
 ## 5. Requisitos funcionais
 1. O usuário informa o **valor médio da conta de luz mensal** (R$).
-2. O usuário escolhe o perfil: **Casa** ou **Negócio**.
-3. O sistema mostra, em tempo real:
+2. O sistema mostra, em tempo real:
    - Economia **mensal** estimada (R$)
    - Economia **anual** estimada (R$)
    - (Opcional) "Sua conta poderia ir de R$ X para R$ Y"
-4. Exibir **aviso visível** perto do resultado:
+3. Exibir **aviso visível** perto do resultado:
    > "O desconto é uma **média** e os valores são uma **estimativa**. A economia real pode variar conforme seu consumo e sua distribuidora."
-5. Botão CTA "Quero economizar" (link configurável em constante).
-6. Validação: valor vazio, zero ou negativo não calcula (mostra estado vazio); limite máximo de R$ 100.000.
+4. Botão CTA "Quero economizar" (link configurável em constante).
+5. Validação: valor vazio, zero ou negativo não calcula (mostra estado vazio); limite máximo de R$ 100.000.
 
 ## 6. Regra de cálculo
 ```ts
 // src/lib/savings.ts
-export type Profile = 'home' | 'business'
-
-export const AVERAGE_DISCOUNT_RATE: Record<Profile, number> = {
-  home: 0.20,      
-  business: 0.20,  
-}
+export const AVERAGE_DISCOUNT_RATE = 0.20
 
 export type SavingsResult = {
   monthlySavings: number
@@ -65,9 +59,8 @@ export type SavingsResult = {
   newMonthlyBill: number
 }
 
-export function calculateSavings(monthlyBill: number, profile: Profile): SavingsResult {
-  const rate = AVERAGE_DISCOUNT_RATE[profile]
-  const monthlySavings = monthlyBill * rate
+export function calculateSavings(monthlyBill: number): SavingsResult {
+  const monthlySavings = monthlyBill * AVERAGE_DISCOUNT_RATE
   return {
     monthlySavings,
     annualSavings: monthlySavings * 12,
@@ -83,7 +76,6 @@ src/
   components/
     SavingsCalculator.tsx   // container: guarda os estados (useState)
     BillInput.tsx           // campo de valor (inputMode="numeric", label, erro)
-    ProfileToggle.tsx       // alternância Casa | Negócio
     SavingsResult.tsx       // área de resultado
     ResultCard.tsx          // card reutilizável (título + valor)
     AverageDisclaimer.tsx   // aviso "desconto é uma média"
@@ -100,7 +92,7 @@ src/
 Todas as props devem ser definidas com `type` próprio.
 
 ## 8. Layout (mobile-first)
-- **Mobile (base):** uma coluna — título, campo, toggle, 2 cards empilhados (Mensal, Anual), aviso, CTA em largura total.
+- **Mobile (base):** uma coluna — título, campo, 2 cards empilhados (Mensal, Anual), aviso, CTA em largura total.
 - **md (≥768px):** cards Mensal e Anual lado a lado.
 - **lg (≥1024px):** formulário à esquerda e resultados à direita, container `max-w-5xl` centralizado.
 - Fundo da seção: `sunne-mist`; card principal branco com borda `sunne-border`; resultado em destaque com fundo `sunne-plum` e valores em `sunne-orange`.
@@ -121,8 +113,8 @@ Todas as props devem ser definidas com `type` próprio.
 - No GitHub: Settings → Pages → Source: **GitHub Actions**.
 
 ## 11. Critérios de aceite
-- [ ] Digitar R$ 300 em "Casa" mostra economia mensal R$ 60,00 e anual R$ 720,00 (com 20%).
-- [ ] Digitar R$ 300 em "Negócio" mostra economia mensal R$ 60,00 e anual R$ 720,00 (com 20%); trocar o perfil recalcula na hora.
+- [ ] Digitar R$ 300 mostra economia mensal R$ 60,00 e anual R$ 720,00 (com 20%).
+- [ ] Não exibir seleção entre Casa e Negócio, pois ambos usam o mesmo desconto.
 - [ ] O aviso de "média/estimativa" sempre aparece junto do resultado.
 - [ ] Funciona bem em 360px de largura, sem rolagem horizontal.
 - [ ] Sem erros de TypeScript (`npm run build` passa) e sem `any`.
@@ -136,7 +128,7 @@ Backend, login, integração com API da Sunne, cálculo por distribuidora/tarifa
 2. Configurar tokens de cor e fonte em `index.css`.
 3. Criar `types`, `lib/savings.ts` e `lib/format.ts`.
 4. Criar os componentes pequenos (`ResultCard`, `AverageDisclaimer`, `CtaButton`).
-5. Criar `BillInput` e `ProfileToggle`.
+5. Criar `BillInput`.
 6. Montar `SavingsCalculator` com `useState` e `SavingsResult`.
 7. Ajustar responsividade (`md:` e `lg:`) e acessibilidade.
 8. Configurar `base` do Vite e o workflow de deploy.

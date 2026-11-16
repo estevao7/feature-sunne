@@ -23,9 +23,8 @@ ao visitante a sua economia estimada em segundos, antes de ele decidir.
 - Incluí um aviso de que o valor é uma média, para ser transparente.
 - Cuidei da acessibilidade (a região do resultado avisa leitores de tela
   quando o valor muda).
-- Simplifiquei o código: a primeira versão tinha dois perfis (casa e
-  negócio), mas ambos tinham o mesmo desconto. Removi a opção redundante
-  para a tela ficar mais direta.
+- Removi a seleção entre Casa e Negócio: ambos tinham o mesmo desconto
+  médio de 20%, então a opção não alterava o resultado.
 - Usei IA como ferramenta de apoio e revisei o código para entender
   cada parte.
 

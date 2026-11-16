@@ -16,18 +16,18 @@ Este arquivo divide a implementação em tarefas sequenciais para agentes de IA.
 
 **Referências:** PRD §§ 5, 6, 10 e 11.
 
-**Escopo:** A taxa de desconto é 20% para Casa e Negócio, conforme a regra de cálculo e os critérios de aceite do PRD. Confirmar os valores concretos necessários para o link do CTA e para o `base` do GitHub Pages, se não puderem ser determinados pelo repositório.
+**Escopo:** Confirmar a taxa única de desconto de 20% e os valores concretos necessários para o link do CTA e para o `base` do GitHub Pages, se não puderem ser determinados pelo repositório.
 
 **Status:** Concluída.
 
 **Decisões registradas:**
-- Desconto confirmado em 20% para Casa e Negócio, conforme o PRD; as tarefas seguintes devem preservar essa regra.
+- Desconto confirmado como taxa única de 20%; como Casa e Negócio têm o mesmo desconto, não haverá seleção de perfil na interface.
 - O repositório remoto é `estevao7/feature-sunne`; o caminho base esperado para o GitHub Pages é `/feature-sunne/`.
 - Destino do CTA confirmado: `https://sunne.economia.sunne.com.br/?_gl=1*1lvyhli*_gcl_au*MzM0MDQ1MTU2LjE3OTQ2MjU3ODY.*_ga*NjU3MzM3MTIuMTc5NDYyNTc4Nw..*_ga_47BBPVJZY0*czE3OTQ2NzA5MzYkbzIkZzAkdDE3OTQ2NzA5MzYkajYwJGwwJGgw`.
 
 **Critério de aceitação:**
 - [x] O destino do CTA e o caminho de publicação estão definidos.
-- [x] O desconto de 20% para ambos os perfis está confirmado para as tarefas seguintes, sem redefinir essa regra.
+- [x] A taxa única de 20% está confirmada e a seleção redundante de perfil foi retirada dos requisitos.
 
 ### 2. Configurar Tailwind e identidade visual
 
@@ -52,11 +52,11 @@ Este arquivo divide a implementação em tarefas sequenciais para agentes de IA.
 
 **Status:** Concluída.
 
-**Resumo:** Criados os tipos `Profile` e `SavingsResult`, cálculo com desconto de 20% para Casa e Negócio, validação do valor entre R$ 0,01 e R$ 100.000, e formatação BRL em `pt-BR`. A função retorna `null` para valores ou perfis inválidos. Incluídos testes automatizados com `node:test` e o script `npm test`.
+**Resumo:** Criado o tipo `SavingsResult`, cálculo com taxa única de 20%, validação do valor entre R$ 0,01 e R$ 100.000, e formatação BRL em `pt-BR`. A função retorna `null` para valores inválidos. Incluídos testes automatizados com `node:test` e o script `npm test`.
 
 **Critério de aceitação:**
 - [x] Os tipos usam `type`, sem `interface` ou `any`.
-- [x] A função de cálculo aplica a taxa de 20% para Casa e Negócio e retorna os valores previstos pelo PRD.
+- [x] A função de cálculo aplica a taxa única de 20% e retorna os valores previstos pelo PRD.
 - [x] A formatação apresenta valores como moeda BRL em `pt-BR`.
 - [x] Há validação automatizada para os casos válidos e inválidos relevantes, e ela passa.
 
@@ -76,19 +76,19 @@ Este arquivo divide a implementação em tarefas sequenciais para agentes de IA.
 - [x] O CTA usa o destino definido ou registrado na tarefa 1.
 - [x] A verificação de TypeScript passa.
 
-### 5. Criar entrada da conta e seleção de perfil
+### 5. Criar entrada da conta
 
-**Referências:** PRD §§ 5, 7, 8 e 13, passo 5.
+**Referências:** PRD §§ 5, 7 e 13, passo 5.
 
-**Escopo:** Implementar o campo de valor mensal e a alternância entre os perfis previstos.
+**Escopo:** Implementar o campo de valor mensal. Não há seleção de perfil porque Casa e Negócio usam a mesma taxa de desconto.
 
 **Status:** Concluída.
 
-**Resumo:** Criados `BillInput`, com rótulo associado, entrada numérica, limites e mensagens acessíveis de validação, e `ProfileToggle`, com opções Casa e Negócio operáveis por teclado e selecionadas por rádios nativos. A calculadora não foi montada; isso pertence à task 6.
+**Resumo:** Criado `BillInput`, com rótulo associado, entrada numérica, limites e mensagens acessíveis de validação. A seleção de perfil foi removida por ser redundante.
 
 **Critério de aceitação:**
 - [x] O campo tem `label` associado, aceita entrada numérica e respeita os limites e estados de validação do PRD.
-- [x] É possível selecionar os dois perfis; a seleção pode ser operada por teclado e tem estado acessível.
+- [x] A interface não exibe uma seleção de perfil redundante.
 - [x] As props são definidas com `type`, sem `any`.
 - [x] A verificação de TypeScript passa.
 
@@ -100,10 +100,10 @@ Este arquivo divide a implementação em tarefas sequenciais para agentes de IA.
 
 **Status:** Concluída.
 
-**Resumo:** Montado o componente `SavingsCalculator` com estado para o valor da conta e o perfil, resultados mensais e anuais atualizados durante a edição, aviso junto aos resultados, região `aria-live="polite"` e CTA configurado. Valores inválidos ou vazios mantêm os resultados ocultos.
+**Resumo:** Montado o componente `SavingsCalculator` com estado para o valor da conta, resultados mensais e anuais atualizados durante a edição, aviso junto aos resultados, região `aria-live="polite"` e CTA configurado. Valores inválidos ou vazios mantêm os resultados ocultos.
 
 **Critério de aceitação:**
-- [x] Entradas válidas atualizam os resultados mensal e anual imediatamente, inclusive ao trocar o perfil.
+- [x] Entradas válidas atualizam os resultados mensal e anual imediatamente.
 - [x] Entrada vazia, zero, negativa ou acima do limite não apresenta cálculo.
 - [x] O aviso de estimativa permanece visível junto ao resultado, e a região de resultado anuncia atualizações com `aria-live="polite"`.
 - [x] O CTA é exibido e usa o destino configurado.
@@ -130,10 +130,14 @@ Este arquivo divide a implementação em tarefas sequenciais para agentes de IA.
 
 **Escopo:** Configurar o caminho base do Vite e o workflow de publicação automatizada.
 
+**Status:** Concluída.
+
+**Resumo:** Confirmado o `base` `/feature-sunne/` e completado o workflow com `configure-pages`, build e publicação do artefato `dist`, Node 22 e permissões mínimas necessárias. O último deploy automático registrado no GitHub concluiu com sucesso.
+
 **Critério de aceitação:**
-- O `base` corresponde ao caminho confirmado na tarefa 1.
-- O workflow executa build e publicação no GitHub Pages com as etapas e permissões especificadas no PRD.
-- O build de produção termina sem erros.
+- [x] O `base` corresponde ao caminho confirmado na tarefa 1.
+- [x] O workflow executa build e publicação no GitHub Pages com as etapas e permissões especificadas no PRD.
+- [x] O build de produção termina sem erros.
 
 ### 9. Validar a entrega completa
 
@@ -141,7 +145,11 @@ Este arquivo divide a implementação em tarefas sequenciais para agentes de IA.
 
 **Escopo:** Fazer a verificação final integrada, cobrindo critérios funcionais, responsivos, de build e deploy.
 
+**Status:** Concluída.
+
+**Resumo:** Confirmados os resultados de R$ 60,00 mensais e R$ 720,00 anuais para uma conta de R$ 300; a seleção Casa/Negócio foi omitida porque não altera o desconto de 20%. Valores vazio, zero, negativo e acima do limite não calculam. Testados o aviso, a responsividade a 360/768/1024 px, o build, os testes, o lint, a ausência de `any` e o deploy automático previamente concluído com sucesso.
+
 **Critério de aceitação:**
-- Todos os critérios aplicáveis da seção 11 do PRD foram verificados e atendidos.
-- `npm run build` passa, sem erros de TypeScript e sem uso de `any`.
-- As tarefas anteriores estão concluídas ou qualquer bloqueio restante está documentado sem ser apresentado como resolvido.
+- [x] Todos os critérios aplicáveis da seção 11 do PRD foram verificados e atendidos.
+- [x] `npm run build` passa, sem erros de TypeScript e sem uso de `any`.
+- [x] As tarefas anteriores estão concluídas ou qualquer bloqueio restante está documentado sem ser apresentado como resolvido.
