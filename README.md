@@ -1,5 +1,7 @@
 # Calculadora de Economia · Sugestão de funcionalidade para a Sunne
 
+**Demo:** [Calculadora de Economia Sunne](https://estevao7.github.io/feature-sunne/)
+
 > **Protótipo independente, feito por iniciativa própria.**
  Não é um projeto oficial e não tem vínculo com a Sunne. Os valores são estimativas baseadas em um desconto médio de 20% [fonte do 20%: ...] e não uma promessa de economia.
 
