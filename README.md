@@ -59,11 +59,21 @@ React · TypeScript · Tailwind CSS · [...]
 ## Como rodar
 
 ```bash
-git clone https://github.com/estevao7/[nome-do-repositorio].git
-cd [nome-do-repositorio]
+git clone https://github.com/estevao7/feature-sunne.git
+cd feature-sunne
 npm install
 npm run dev
 ```
+
+## Deploy no GitHub Pages
+
+O deploy é feito automaticamente pelo GitHub Actions quando há um push na
+branch `main`. O workflow também pode ser executado manualmente pela aba
+**Actions**.
+
+Antes do primeiro deploy, habilite o GitHub Pages em **Settings > Pages**,
+selecionando **GitHub Actions** como fonte de publicação. O site ficará
+disponível em https://estevao7.github.io/feature-sunne/.
 
 ## Próximos passos (ideias)
 
